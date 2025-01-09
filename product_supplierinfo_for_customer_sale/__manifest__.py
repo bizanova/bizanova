@@ -11,11 +11,13 @@
     "website": "https://github.com/OCA/sale-workflow",
     "category": "Sales Management",
     "license": "AGPL-3",
-    "depends": ["sale_management", "product_supplierinfo_for_customer"],
+    "depends": ["sale_management", "product_supplierinfo_for_customer", "stock"],
     "data": [
         "security/ir.model.access.csv",
         "views/product_customerinfo_views.xml",
+        "views/report_deliveryslip.xml",
         "views/sale_view.xml",
+        "views/stock_move.xml",
     ],
     "installable": True,
 }
