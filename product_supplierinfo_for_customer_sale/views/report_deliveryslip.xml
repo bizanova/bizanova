@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_delivery_document_custom" inherit_id="stock.report_delivery_document">
+        <xpath expr="//th[@name='th_sm_product']" position="before">
+            <th>Customer Code</th>
+        </xpath>
+        <xpath expr="//span[@t-field='move.product_id']/.." position="before">
+            <td>
+                <span t-field="move.product_customer_code">Customizable Desk</span>
+            </td>
+        </xpath>
+        <xpath expr="//th[@name='th_sml_product']" position="before">
+            <th>Customer Code</th>
+        </xpath>
+    </template>
+
+     <template id="custom_stock_report_delivery_aggregated_move_lines" inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+        <xpath expr="//tr[@t-foreach='aggregated_lines']//td[1]" position="before">
+            <td>
+                <span t-esc="aggregated_lines[line]['move'].product_customer_code"/>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>
+
+
